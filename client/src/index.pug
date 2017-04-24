@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        base(href="/")
+        meta(charset="UTF-8")
+        title PiGit
+        link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap.min.css")
+        link(rel="stylesheet", href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css")
+    body
+        app-root
+
+        script(src="node_modules/jquery/dist/jquery.min.js")
+        script(src="node_modules/bootstrap/dist/js/bootstrap.min.js")
+
+        script(src="node_modules/core-js/client/shim.min.js")
+
+        script(src="node_modules/zone.js/dist/zone.js")
+        script(src="node_modules/systemjs/dist/system.src.js")
+        script(src="node_modules/typescript/lib/typescript.js")
+
+        script(type="text/javascript" src="systemjs.config.js")
+        script.
+            SystemJS
+                .import('main.js')
+                .catch(function(err){
+                    console.error(err);
+                });

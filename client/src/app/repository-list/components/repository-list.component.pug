@@ -1,0 +1,14 @@
+h2 Repository List
+app-repository-list-delete-confirmation([eventListener]="modalEvent", (reloadList)="reloadList()")
+nav(*ngIf="showPagination", aria-label="Page navigation")
+    ul(class="pagination")
+        li
+            a(aria-label="Previous")
+                span(aria-hidden="true") &laquo;
+        li(*ngFor="let p of pages")
+            a((click)="goToPage(p - 1)") {{ p }}
+        li
+            a(aria-label="Next")
+                span(aria-hidden="true") &raquo;
+div(class="container-fluid")
+    app-repository-list-item(*ngFor="let item of list | repositoryListPagination : page : itemsPerPage; let idx = index", [item]="item", [index]="idx + 1 + (page*itemsPerPage)", (openDeleteConfirmation)="openDeleteConfirmation($event)")

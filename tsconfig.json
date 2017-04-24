@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "include": [
+    "app/src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "server"
+  ]
+}
